@@ -1,7 +1,8 @@
-# 🐟 咸鱼体商品介绍生成器
+# 咸鱼体商品介绍生成器
 
-> 一个 WorkBuddy Skill，输入商品名称和规格，自动生成闲鱼风格的二手商品介绍文案。
+> 输入商品名称和规格，自动生成闲鱼风格的二手商品介绍文案。支持 WorkBuddy / 大龙虾 / 赫尔墨斯 / ChatGPT / Claude 等各类 AI 平台。
 
+[![Platform](https://img.shields.io/badge/Platform-Universal-green)]()
 [![WorkBuddy Skill](https://img.shields.io/badge/WorkBuddy-Skill-blue)](https://www.workbuddy.cn)
 
 ## 这是什么？
@@ -60,30 +61,32 @@
 | 母婴用品 | "宝妈出"、安全第一 |
 | 运动器材 | "健身失败"、三分钟热度自嘲 |
 
-## 安装使用
+## 多平台使用
 
-### 方式一：直接使用
+### WorkBuddy
 
-在 WorkBuddy 中对话，当提到"咸鱼体""闲鱼风格""闲置文案"等关键词时，Skill 会自动触发。
+Skill 已内置，提到"咸鱼体""闲鱼风格""闲置文案"等关键词自动触发。
 
-### 方式二：手动安装
+### 大龙虾 / 赫尔墨斯 / 其他 AI 智能体
 
-将本仓库的 SKILL.md 和 references/ 目录放到 WorkBuddy 的 skills 目录下：
+将 `prompts/system-prompt.md` 的全部内容复制，粘贴到智能体的"系统提示词"或"角色设定"中即可使用。
 
-```
-~/.workbuddy/skills/xianyu-copywriting/
-├── SKILL.md
-└── references/
-    └── xianyu_style_guide.md
-```
+### ChatGPT / Claude / 任意 AI 对话
+
+**方式一（推荐）：** 将 `prompts/system-prompt.md` 设为系统提示词 / Custom Instructions。
+
+**方式二（快速）：** 复制 `prompts/quick-prompt.md` 的内容，在对话中发送，然后输入商品信息即可。
 
 ## 文件结构
 
 ```
 xianyu-copywriting/
-├── SKILL.md                          # Skill 主指令（触发条件、工作流）
+├── SKILL.md                                  # WorkBuddy Skill 主指令
+├── prompts/
+│   ├── system-prompt.md                      # 通用系统提示词（任意 AI 可用）
+│   └── quick-prompt.md                       # 快速版提示词（单次对话用）
 └── references/
-    └── xianyu_style_guide.md         # 咸鱼体风格指南（句式模板、品类参考）
+    └── xianyu_style_guide.md                 # 咸鱼体风格指南
 ```
 
 ## License
